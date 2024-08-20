@@ -1,0 +1,207 @@
+@import "mixins";
+
+#who-we-are-section {
+    padding: 0 10rem;
+    background-image: url("../Assets/about/background.jpg");
+    
+    .who-we-are-grid {
+        @include center();
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+        top: -30px;
+
+        .gym-info {
+            @include center();
+            flex-direction: column;
+            padding: 4rem 2rem;
+            text-align: center;
+            gap: 1rem;
+            background-color: white;
+            box-shadow: 5px 5px 17px -6px #A6A6A6;
+            transition: all ease-in-out .2s;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            p:first-of-type {
+                font-size: large;
+                font-weight: 700;
+            }
+            img {
+                width: 5.5rem;
+            }
+            &:hover {
+                background-image: url("../Assets/about/hover-img.jpg");
+                background-size: cover;
+                color: white;
+            }
+        }
+    }
+}
+
+.about-page-container {
+    background-image: url("../Assets/about/background.jpg");
+    padding: 0 10rem;
+
+    .history-container {
+        padding: 4rem 0;
+        @include center();
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .history-grid-item {
+                @include center();
+                gap: .5rem;
+                flex-direction: column;
+                text-align: center;
+                padding: 5rem;
+                background-color: white;
+                img {
+                    width: 90px;
+                }
+            }
+    
+            .history-item-2 {
+                background-image: url("../Assets/about/himg-1.jpg");
+                background-position: 50%;
+                background-size: cover;
+            }
+
+            .history-item-3 {
+                background-image: url("../Assets/about/himg-2.jpg");
+                background-position: 50%;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.who-we-are-info {
+    @include center();
+    justify-content: start;
+    padding: 4rem 0;
+    gap: 4rem;
+
+
+    .who-we-are-text {
+        width: 50%;
+
+        .who-we-are-text-title {
+            @include center();
+            flex-direction: column;
+            position: relative;
+            .highlight {
+                position: absolute;
+                font-weight: 700;
+                color: white;
+                text-align: center;
+                width: 100%;
+                top: 0;
+                padding-top: .3rem;
+            }
+        }
+        
+        .cta-button {
+            background-color: #4D4D4D;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 1rem 3rem;
+            position: relative;
+            overflow: hidden;
+            
+            &::after {
+                @include button(#4D4D4D);
+            }
+
+            &:hover::after {
+                left: 0;
+                top: 0;
+                border-color: $red-color;
+            }
+            &:hover{
+                background-color: $red-color;
+            }
+        }
+
+        h3 {
+            font-size: 2.3rem;
+            padding-bottom: 1rem;
+        }
+
+        .who-we-are-highlight {
+            @include center();
+            gap: 1rem;
+            text-align: center;
+            font-weight: 700;
+            margin: 3rem 0;
+
+            .borders {
+                border-left: solid 1px gray;
+                border-right: solid 1px gray;
+            }
+
+            .highlight-item {
+                width: 100%;
+                font-size: 1.2rem;
+                padding: 1rem;
+                img {
+                    width: 4rem;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .who-we-are-img {
+        width: 50%;
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    #who-we-are-section {
+        padding: 3rem;
+    }
+    .about-page-container{
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 770px){
+    #who-we-are-section{
+        padding: 2rem;
+        .who-we-are-grid {
+            flex-wrap: wrap;
+        }
+    }
+
+    .who-we-are-info{
+        flex-direction: column;
+        text-align: center;
+        .who-we-are-text{
+            width: 100% !important;
+        }
+        .who-we-are-img{
+            display: none;
+        }
+    }
+
+    .history-grid{
+        grid-template-columns: auto !important;
+    }
+}
+
+@media (max-width: 430px){
+    .who-we-are-highlight{
+        flex-direction: column;
+        gap: 3rem !important;
+        .borders{
+            border: none !important;
+        }
+    }
+}

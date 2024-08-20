@@ -1,0 +1,115 @@
+@import "mixins";
+
+#testimonials-section {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid lightgrey 1px;
+
+    .testimonials-container{
+        @include center();
+        flex-direction: column;
+        width: 80%;
+        padding: 5rem 0;
+
+        .testimonials-title {
+            @include center();
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            position: relative;
+            p:first-child {
+                position: absolute;
+                font-weight: 700;
+                color: white;
+                padding-top: .2rem;
+            }
+        }
+
+        .testimonials-slider {
+            border: solid #EFEFEF 10px;
+            padding: 2rem;
+            margin-top: 8rem;
+            width: 100%;
+            .testimonial-slider-container {
+                @include center();
+                justify-content: flex-start;
+                background-color: black;
+                color: white;
+                position: relative;
+                height: 20rem;
+
+                img {
+                    border-top-right-radius: 200px;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                .slider-container-text {
+                    width: 60%;
+                    right: 0;
+                    position: absolute;
+                    padding: 2rem;
+                    img {
+                        position: relative;
+                        width: 3rem;
+                    }
+                    p{ color: lightgray; }
+                    .testimonial-text-name {
+                        color: white;
+                        font-weight: 700;
+                        padding-top: 1rem
+                    }
+                }
+                .testimonials-buttons {
+                    width: 20%;
+                    position: absolute;
+                    right: 0;
+                    bottom: 2rem;
+                    button {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border: none;
+                        cursor: pointer;
+                        margin: 0 .2rem;
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+        }
+
+        .testimonials-sponsors {
+            @include center();
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-top: 3rem;
+            width: 100%;
+
+            img {
+                width: 180px;
+                transition: all ease-in-out .3s;
+                &:hover {
+                
+                    filter: brightness(50%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 430px){
+    .testimonial-slider-container {
+        height: 31rem !important;
+    }
+}
+@media (max-width: 1030px){
+    .testimonial-slider-container {
+        img {
+            display: none;
+        }
+        .slider-container-text {
+            width: 100% !important;
+        }
+    }
+}

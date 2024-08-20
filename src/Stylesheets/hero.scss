@@ -1,0 +1,64 @@
+@import "mixins";
+
+#hero-section {
+    height: 100vh;
+    background-image: url("../Assets/hero/hero-img.jpg");
+    background-repeat: no-repeat;
+    background-color: rgb(11, 11, 11);
+    background-position: 40%;
+    object-fit: cover;
+
+    .hero-info {
+        @include center();
+        color: white;
+        height: 100%;
+        padding-left: 50%;
+        .hero-text {
+            font-weight: 700;
+            text-transform: uppercase;
+            h2 {
+                font-size: 3rem;
+                padding-bottom: 5rem;
+                span {
+                    font-weight: 200;
+                }
+            }
+            a {
+                padding: 1rem 2rem;
+                background-color: white;
+                color: black;
+                text-decoration: none;
+                position: relative;
+                overflow: hidden;
+                &::after {
+                   @include button(white);
+                }
+                &:hover::after {
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        .hero-share {
+            transform: rotate(-90deg);
+            display: flex;
+            gap: 1rem;
+            flex-direction: row-reverse;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            span {
+                height: 3px;
+                background-color: $red-color;
+                width: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 430px){
+    .hero-info {
+        padding-left: 30% !important;
+    }
+}

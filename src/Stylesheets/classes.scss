@@ -1,0 +1,122 @@
+@import "mixins";
+
+#classes-section {
+    @include center();
+    gap: 3rem;
+    flex-direction: column;
+    padding: 5rem 0;
+
+    .classes-container{
+        @include center();
+        width: 80%;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .class-container {
+            padding: 10rem 8rem 4rem 4rem;
+            color: white;
+            border-radius: 20px;
+            position: relative;
+
+            span:first-child {
+                height: 100%;
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 20px;
+                background-color: #0000004a;
+            }
+
+            .class-info-container {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                position: relative;
+                z-index: 2;
+                .class-title {
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+                .under-line {
+                    display: block;
+                    height: 4px;
+                    background-color: $red-color;
+                    width: 30%;
+                }
+    
+                .class-information {
+                    @include center();
+                    justify-content: flex-start;
+                    margin-bottom: 2rem;
+                }
+                a {
+                    text-decoration: none;
+                    color: black;
+                    background-color: white;
+                    padding: 1rem 2rem;
+                    position: relative;
+                    font-weight: 600;
+                    &::after {
+                        @include button(white);
+                    }
+                    &:hover::after {
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+        
+        }
+
+        .class-1 {
+            background-image: url("../Assets/featured/cycling.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        .class-2 {
+            background-image: url("../Assets/featured/meditation.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        .class-3 {
+            background-image: url("../Assets/featured/martial-arts.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        .class-4 {
+            background-image: url("../Assets/featured/karate.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        .class-5 {
+            background-image: url("../Assets/featured/power.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        .class-6 {
+            background-image: url("../Assets/featured/workout.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+    }
+
+    button {
+        background-color: $red-color;
+        color: white;
+        font-weight: 600;
+        border: none;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        &:hover {
+            opacity: .7;
+        }
+    }
+}

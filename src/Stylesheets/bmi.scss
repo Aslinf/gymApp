@@ -1,0 +1,55 @@
+@import "mixins";
+
+#bmi-calc-section {
+    background-image: url("../Assets/bmi/bmi-bg.jpg");
+    background-size: cover;
+    @include center();
+   .bmiCalc-container {
+    width: 80%;
+    padding: 5rem 0;
+    color: gray;
+
+    h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+        span {
+            color: $red-color;
+        }
+    }
+
+    .calculator-form {
+        @include center();
+        justify-content: flex-start;
+        gap: 1.5rem;
+        input {
+            color: white;
+            border: solid 2px gray;
+            padding: 10px;
+            margin: 1.5rem 0;
+            background-color: #121212;
+        }
+    }
+
+    button {
+        background-color: #323232;
+        font-weight: 600;
+        color: white;
+        border: none;
+        margin-top: 1rem;
+        padding: 1rem 2rem ;
+        cursor: pointer;
+        transition: all ease-in-out .2s;
+        &:hover {
+            background-color: $red-color;
+        }
+    }
+   }
+}
+
+@media (max-width: 430px){
+    .calculator-form {
+        flex-direction: column;
+    }
+}

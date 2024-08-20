@@ -1,0 +1,94 @@
+@import "mixins";
+
+#trainers-section {
+    background-image: url("../Assets/trainers/background.jpg");
+    display: flex;
+    justify-content: center;
+
+    .trainers-container {
+        width: 80%;
+        @include center();
+        flex-direction: column;
+        padding: 5rem 0;
+
+        .coaches-title {
+            @include center();
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            position: relative;
+            p:first-child {
+                position: absolute;
+                z-index: 2;
+                font-weight: 700;
+                top: 0;
+                padding-top: .3rem;
+            }
+
+            h3 { 
+                font-size: 2.5rem; 
+                padding-top: 2rem;
+                padding-bottom: 1rem
+            }
+        }
+
+        .coaches-grid {
+            @include center();
+            text-align: center;
+            flex-wrap: wrap;
+            padding: 3rem 0;
+            gap: 2rem;
+
+            .coach-container {
+                @include center();
+                flex-direction: column;
+                position: relative;
+                cursor: pointer;
+
+                img:first-child {
+                    position: absolute;
+                    filter: grayscale(100%);
+                }
+
+                .coach-bg-img {
+                    position: relative;
+                }
+
+                .coach-info {
+                    background-color: white;
+                    width: 100%;
+                    z-index: 2;
+                    padding: 1.5rem;
+                    border-radius: 10px;
+
+                    p:first-child { 
+                        font-weight: 700; 
+                        font-size: 1.2rem;
+                    }
+                    p:last-child { color: gray; }
+                }
+
+                &::after {
+                    background-color: #ff0336;
+                    bottom: 0;
+                    content: "";
+                    height: 5px;
+                    z-index: 2;
+                    left: 0;
+                    margin: 0 auto;
+                    position: absolute;
+                    right: 0;
+                    transition: all .3s ease-in-out;
+                    width: 45px;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+                img:first-child:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}
