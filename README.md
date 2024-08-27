@@ -9,6 +9,7 @@ Build with:
 
 ## Project 📸
 
-![gymapp](https://github.com/user-attachments/assets/79af81ea-794c-482f-9d4a-335a04e70c95)
+![gymapp](https://github.com/user-attachments/assets/2ee70b75-b764-46d7-a63c-86b3d47b28e9)
+
 
 
